@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {ApiService} from './services/api.service';
-// big Davy
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 
