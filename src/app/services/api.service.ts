@@ -13,7 +13,7 @@ export class ApiService {
 
   constructor(public http: HttpClient) {
   }
-//getPopularMovie
+
   getPopularMovie() {
     return this.http.get(this.urlPopular + this.apiKey + '&language=en-US&page=1');
   }

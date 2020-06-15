@@ -3,8 +3,6 @@ import {ApiService} from '../../services/api.service';
 import {Popular} from '../../model/popular';
 import {Results} from '../../model/results';
 
-import {Title} from '@angular/platform-browser';
-import {Newest} from '../../model/newest';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +10,7 @@ import {Newest} from '../../model/newest';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  // populars: Popular []=[];
+  populars: Popular []=[];
   // title: Function;
 
 
@@ -21,14 +19,11 @@ export class AppComponent implements OnInit {
   }
 
 
-    ngOnInit(): void {
-    }
-
-  // ngOnInit() {
-  //   return this.apiService.getPopularMovie()
-  //     .subscribe((data: Results)=> {
-  //       console.log(data)
-  //       this.populars= data.popularMovies;
-  //     });
-  // }
+ ngOnInit() {
+  return this.apiService.getPopularMovie()
+    .subscribe((data: Results)=> {
+      console.log(data)
+      this.populars= data.results;
+    });
+}
 }

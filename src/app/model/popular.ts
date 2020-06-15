@@ -1,4 +1,5 @@
 export interface Popular {
+
   popularity: number,
   vote_count: number,
   video: boolean,
@@ -10,13 +11,10 @@ export interface Popular {
   original_title: string,
 
 
-  /*  genre_ids: [
-      number,
-      number
-    ],*/
+  genre_ids: [],
   title: string,
   vote_average: number,
-  "overview": string,
+  'overview': string,
   release_date: string
 
 }

@@ -7,8 +7,7 @@ export interface Results {
   page: number,
   total_results: number,
   total_pages: number,
-  popularMovies: [Popular],
-  newestMovies: [Newest]
+  results: [Popular],
 
 
 }

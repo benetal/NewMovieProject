@@ -10,17 +10,19 @@ import {ApiService} from '../../services/api.service';
 })
 export class NewestMoviesComponent implements OnInit {
 
-  newest: Newest []=[];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {
+  }
 
   ngOnInit() {
 
-    return  this.apiService.getNewestMovie()
-      .subscribe((data: Results )=> {
-        console.log(data)
-        this.newest= data.newestMovies;
-      })
+    /*    return  this.apiService.getNewestMovie()
+          .subscribe((data: Newest )=> {
+            console.log(data)
+            this.newestMovie= data.newest;
+          })
+      }*/
+
   }
 
 }

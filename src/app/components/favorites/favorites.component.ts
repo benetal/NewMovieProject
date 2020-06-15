@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Results} from '../../model/results';
 import {ApiService} from '../../services/api.service';
 import {Popular} from '../../model/popular';
+import {Newest} from '../../model/newest';
 
 @Component({
   selector: 'app-favorites',
@@ -9,16 +10,13 @@ import {Popular} from '../../model/popular';
   styleUrls: ['./favorites.component.css']
 })
 export class FavoritesComponent implements OnInit {
-  populars: Popular []=[];
 
-  constructor(private apiService: ApiService) { }
 
-  ngOnInit() {
-    return this.apiService.getPopularMovie()
-      .subscribe((data: Results) => {
-        console.log(data)
-        this.populars = data.popularMovies;
-      });
+  constructor(private apiService: ApiService) {
   }
 
+  ngOnInit() {
+
+
+  }
 }
