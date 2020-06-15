@@ -1,12 +1,14 @@
-import {Movies} from './movies';
-import {Images} from './images';
+import {Popular} from './popular';
+import {Newest} from './newest';
+
 
 export interface Results {
 
   page: number,
   total_results: number,
   total_pages: number,
-  results: [Movies],
-  pictures: [Images]
+  popularMovies: [Popular],
+  newestMovies: [Newest]
+
 
 }

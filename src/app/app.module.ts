@@ -5,10 +5,14 @@ import {ApiService} from './services/api.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
+import { NewestMoviesComponent } from './components/newest-movies/newest-movies.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewestMoviesComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

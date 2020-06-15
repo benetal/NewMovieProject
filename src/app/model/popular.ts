@@ -1,11 +1,11 @@
-export interface Movies {
+export interface Popular {
   popularity: number,
   vote_count: number,
   video: boolean,
-  poster_path: string/*"/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg"*/,
+  poster_path: string,
   id: number,
   adult: boolean,
-  backdrop_path: string/*"/5BwqwxMEjeFtdknRV792Svo0K1v.jpg"*/,
+  backdrop_path: string,
   original_language: string,
   original_title: string,
 

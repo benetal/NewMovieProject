@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
-import {Movies} from '../../model/movies';
+import {Popular} from '../../model/popular';
 import {Results} from '../../model/results';
-import {Images} from '../../model/images';
+
 import {Title} from '@angular/platform-browser';
+import {Newest} from '../../model/newest';
 
 @Component({
   selector: 'app-root',
@@ -11,24 +12,23 @@ import {Title} from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  movies: Movies []=[];
-  images: Images []=[];
+  populars: Popular []=[];
+  title: Function;
+
+
 
   constructor(private apiService: ApiService) {
   }
 
 
   ngOnInit() {
-    return this.apiService.getMovie()
+    return this.apiService.getPopularMovie()
       .subscribe((data: Results)=> {
         console.log(data)
-        this.movies= data.results;
+        this.populars= data.popularMovies;
       });
 
-/*    return this.apiService.getImages()
-      .subscribe((data: Results)=> {
-      this.images= data.pictures;
-    });*/
+
 
   }
 }
