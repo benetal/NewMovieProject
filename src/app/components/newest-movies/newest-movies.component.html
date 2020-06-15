@@ -1,0 +1,17 @@
+
+
+<div class="row">
+  <div *ngIf="newest">
+    <div *ngFor="let new of newest">
+
+      <h4 class="popular">{{new.title}}</h4>
+      <div class="image">
+
+
+        <img  src="http://image.tmdb.org/t/p/w500{{new.poster_path}}">
+
+      </div>
+
+    </div>
+  </div>
+</div>
