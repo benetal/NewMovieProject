@@ -1,1 +1,21 @@
 <p>favorites works!</p>
+
+
+<div class="row">
+  <div *ngIf="populars">
+    <div *ngFor="let popular of populars">
+
+      <h4 class="popular">{{popular.title}}</h4>
+      <div class="image">
+
+
+        <img src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}">
+
+      </div>
+
+      <!--      <h5>{{image.id}}</h5>-->
+    </div>
+  </div>
+</div>
+<!--</div>-->
+

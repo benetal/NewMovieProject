@@ -12,8 +12,8 @@ import {Newest} from '../../model/newest';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  populars: Popular []=[];
-  title: Function;
+  // populars: Popular []=[];
+  // title: Function;
 
 
 
@@ -21,14 +21,14 @@ export class AppComponent implements OnInit {
   }
 
 
-  ngOnInit() {
-    return this.apiService.getPopularMovie()
-      .subscribe((data: Results)=> {
-        console.log(data)
-        this.populars= data.popularMovies;
-      });
+    ngOnInit(): void {
+    }
 
-
-
-  }
+  // ngOnInit() {
+  //   return this.apiService.getPopularMovie()
+  //     .subscribe((data: Results)=> {
+  //       console.log(data)
+  //       this.populars= data.popularMovies;
+  //     });
+  // }
 }
