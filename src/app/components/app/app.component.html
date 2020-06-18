@@ -1,21 +1,33 @@
 
 
-<body>
-<h1>Fuck you!</h1>
-<div *ngIf="populars">
-  <div *ngFor="let popular of populars">
-
-    <div>{{popular.title}}
-
-
-      <div>
-        <img  src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}">
-      </div>
-    </div>
-
-  </div>
-
-</div>
-</body>
+<app-header></app-header>
 
 <router-outlet></router-outlet>
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+<!--<body>-->
+<!--<h1>Fuck you!</h1>-->
+<!--<div *ngIf="populars">-->
+<!--  <div *ngFor="let popular of populars">-->
+
+<!--    <div>{{popular.title}}-->
+
+
+<!--      <div>-->
+<!--        <img  src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}">-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--</div>-->
+<!--</body>-->

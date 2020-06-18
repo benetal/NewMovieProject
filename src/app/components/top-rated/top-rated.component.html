@@ -1,0 +1,15 @@
+<body>
+<!--<h1>Fuck you too!</h1>-->
+<div *ngIf="topRated">
+  <div *ngFor="let top of topRated">
+
+    <div>{{top.title}}
+      <div>
+        <img  src="http://image.tmdb.org/t/p/w500{{top.poster_path}}">
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</body>

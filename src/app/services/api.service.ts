@@ -8,8 +8,10 @@ import {HttpClient} from '@angular/common/http';
 export class ApiService {
 
   apiKey: string = 'b1e86b5585ce562ad26b909dfeee3fcc';
-  urlPopular: string = 'https://api.themoviedb.org/3/movie/popular?api_key='
-  urlNewestMovie: string = 'https://api.themoviedb.org/3/movie/latest?api_key='
+  urlPopular: string = 'https://api.themoviedb.org/3/movie/popular?api_key=';
+  urlNewestMovie: string = 'https://api.themoviedb.org/3/movie/latest?api_key=';
+  urlTopRated: string = 'https://api.themoviedb.org/3/movie/top_rated?api_key=';
+
 
   constructor(public http: HttpClient) {
   }
@@ -20,7 +22,10 @@ export class ApiService {
 
   getNewestMovie() {
     return this.http.get(this.urlNewestMovie + this.apiKey + '&language=en-US');
+  }
 
+  getTopRated() {
+    return this.http.get(this.urlTopRated + this.apiKey + '&language=en-US&page=1');
   }
 
 }

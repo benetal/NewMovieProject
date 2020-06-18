@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../../services/api.service';
-import {Popular} from '../../model/popular';
-import {Results} from '../../model/results';
+
 
 
 @Component({
@@ -10,20 +8,22 @@ import {Results} from '../../model/results';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  populars: Popular []=[];
+  // populars: Popular [] = [];
   // title: Function;
 
 
 
-  constructor(private apiService: ApiService) {
+  // constructor(private apiService: ApiService) {
+  // }
+  constructor() {
   }
 
 
- ngOnInit() {
-  return this.apiService.getPopularMovie()
-    .subscribe((data: Results)=> {
-      console.log(data)
-      this.populars= data.results;
-    });
+ ngOnInit(): void {
+  // return this.apiService.getPopularMovie()
+  //   .subscribe((data: Results)=> {
+  //     console.log(data)
+  //     this.populars= data.results;
+  //   });
 }
 }

@@ -7,12 +7,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { NewestMoviesComponent } from './components/newest-movies/newest-movies.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PopularComponent } from './components/popular/popular.component';
+import { TopRatedComponent } from './components/top-rated/top-rated.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewestMoviesComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    HeaderComponent,
+    FooterComponent,
+    PopularComponent,
+    TopRatedComponent
   ],
   imports: [
     BrowserModule,
