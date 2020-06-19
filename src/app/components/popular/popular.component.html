@@ -1,12 +1,57 @@
-<body>
-<h1>Fuck you!</h1>
-<div *ngIf="populars">
-  <div *ngFor="let popular of populars">
-    <div>{{popular.title}}
-      <div>
-        <img src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}">
+<!--<body>-->
+<!--<div *ngIf="populars">-->
+<!--  <div *ngFor="let popular of populars">-->
+<!--    <div>{{popular.title}}-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <img src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</body>-->
+
+
+<div style="padding: 20px">
+  <div class="row">
+    <div *ngIf="populars">
+      <div *ngFor="let popular of populars">
+        <!--      <span class="form-group">-->
+
+
+        <div class="container col-sm-"  id="borderlineForPopular">
+
+
+
+
+          <div class="col-xs-2">
+            <div>
+              <img src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}" style="max-height: 200px">
+            </div>
+          </div>
+
+
+          <div class="col-">
+            <h3>{{popular.title}}
+            </h3>
+            <h4>Movie Description</h4>
+            <div style="font-size: small">{{popular.overview}}
+            </div>
+          </div>
+
+
+          <div>
+            <button class="btn btn-info" id="addFavouriteButtonPosition">Add to Favourites</button>
+          </div>
+        </div>
       </div>
+      <!--        </span>-->
     </div>
   </div>
 </div>
-</body>
+
+
+
+
+
+
+
