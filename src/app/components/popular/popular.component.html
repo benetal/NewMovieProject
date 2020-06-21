@@ -12,39 +12,32 @@
 
 
 <div style="padding: 20px">
-  <div class="row">
+  <div class="col-sm-auto">
     <div *ngIf="populars">
       <div *ngFor="let popular of populars">
-        <!--      <span class="form-group">-->
-
-
-        <div class="container col-sm-"  id="borderlineForPopular">
-
-
-
-
-          <div class="col-xs-2">
-            <div>
-              <img src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}" style="max-height: 200px">
+        <div class="container" id="borderlineForPopular">
+          <div class="row">
+            <div class="col-sm-auto">
+              <div>
+                <img src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}" style="max-height: 250px">
+              </div>
             </div>
-          </div>
-
-
-          <div class="col-">
-            <h3>{{popular.title}}
-            </h3>
-            <h4>Movie Description</h4>
-            <div style="font-size: small">{{popular.overview}}
+            <div class="col-sm-3">
+              <h3>{{popular.title}}
+              </h3>
+              <h4>Movie Description</h4>
+              <div style="font-size: small">{{popular.overview}}
+              </div>
             </div>
-          </div>
-
-
-          <div>
-            <button class="btn btn-info" id="addFavouriteButtonPosition">Add to Favourites</button>
+            <div class="col-auto">
+              <button class="btn btn-info"
+                      (click)="onAddToFavourites(popular);">
+                Add to Favourites
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <!--        </span>-->
     </div>
   </div>
 </div>
