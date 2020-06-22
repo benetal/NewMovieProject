@@ -1,0 +1,17 @@
+<p>now-playing-movie works!</p>
+
+<body>
+<h1>Fuck you!</h1>
+<div>
+  <input type="text" [(ngModel)]="searchName">
+</div>
+<div *ngIf="nowPlayingMovies">
+  <div *ngFor="let nowPlayingMovie of nowPlayingMovies | filter: searchName">
+    <div>{{nowPlayingMovie.title}}
+      <div>
+        <img src="http://image.tmdb.org/t/p/w500{{nowPlayingMovie.poster_path}}">
+      </div>
+    </div>
+  </div>
+</div>
+</body>
