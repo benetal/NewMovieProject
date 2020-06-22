@@ -1,9 +1,8 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Results} from '../../model/results';
 import {ApiService} from '../../services/api.service';
 import {Popular} from '../../model/popular';
 import {FavouriteMovieService} from '../../services/favourite-movie.service';
-import {Ifavourite} from '../../model/Ifavourite';
 
 @Component({
   selector: 'app-popular',
@@ -17,13 +16,12 @@ export class PopularComponent implements OnInit {
 
   movieIdNumber: string;
   movieTitle: string;
-
-  @Input() favouritList: Array<Ifavourite>;
+  searchName: string="";
 
   ngOnInit() {
-    return this.apiService.getPopularMovie()
+    return this.apiService.getPopularMovieData()
       .subscribe((data: Results) => {
-        console.log(data);
+        console.log(data)
         this.populars = data.results;
       });
   }
@@ -66,7 +64,5 @@ export class PopularComponent implements OnInit {
         console.log(this.movieTitle);
       });
   }
-
-
 
 }

@@ -1,6 +1,4 @@
 import {Popular} from './popular';
-import {Newest} from './newest';
-import {GetTopRated} from './getTopRated';
 
 
 export interface Results {

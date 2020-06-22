@@ -14,7 +14,7 @@ export class TopRatedComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    return this.apiService.getTopRated()
+    return this.apiService.getTopRatedData()
       .subscribe((data: GetTopRatedInterface) => {
         // console.log(data);
         this.topRated  = data.results;

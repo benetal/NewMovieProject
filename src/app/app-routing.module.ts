@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {NewestMoviesComponent} from './components/newest-movies/newest-movies.component';
 import {PopularComponent} from './components/popular/popular.component';
 import {FavoritesComponent} from './components/favorites/favorites.component';
 import {TopRatedComponent} from './components/top-rated/top-rated.component';
+import {NowPlayingMovieComponent} from './components/now-playing-movie/now-playing-movie.component';
 
 
 const routes: Routes = [
   {path: '', component: PopularComponent},
-  {path: 'newest', component: NewestMoviesComponent},
+  {path: 'nowPlaying', component: NowPlayingMovieComponent},
   {path: 'favourites', component: FavoritesComponent},
-  {path: 'topRated', component: TopRatedComponent},
+  {path: 'topRated', component: TopRatedComponent}
 
   // {path: '', redirectTo: '/first-component' , pathMatch: 'full'}
 ];

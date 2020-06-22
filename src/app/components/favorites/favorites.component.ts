@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Results} from '../../model/results';
 import {ApiService} from '../../services/api.service';
-import {Popular} from '../../model/popular';
-import {Newest} from '../../model/newest';
+
 
 @Component({
   selector: 'app-favorites',

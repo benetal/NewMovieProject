@@ -2,33 +2,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {ApiService} from './services/api.service';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
-import { NewestMoviesComponent } from './components/newest-movies/newest-movies.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PopularComponent } from './components/popular/popular.component';
 import { TopRatedComponent } from './components/top-rated/top-rated.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NowPlayingMovieComponent} from './components/now-playing-movie/now-playing-movie.component';
+import {FilterPipe} from './pipes/filter.pipe';
 import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewestMoviesComponent,
     FavoritesComponent,
     HeaderComponent,
     FooterComponent,
     PopularComponent,
-    TopRatedComponent
+    TopRatedComponent,
+    NowPlayingMovieComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule,
     FormsModule
   ],
   providers: [ApiService],

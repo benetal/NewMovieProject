@@ -1,20 +1,10 @@
-<!--<body>-->
-<!--<div *ngIf="populars">-->
-<!--  <div *ngFor="let popular of populars">-->
-<!--    <div>{{popular.title}}-->
-<!--    </div>-->
-<!--    <div>-->
-<!--      <img src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}">-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--</body>-->
-
-
 <div style="padding: 20px">
   <div class="col-sm-auto">
+    <div>
+      <input type="text" [(ngModel)]="searchName">
+    </div>
     <div *ngIf="populars">
-      <div *ngFor="let popular of populars">
+      <div *ngFor="let popular of populars | filter: searchName">
         <div class="container" id="borderlineForPopular">
           <div class="row">
             <div class="col-sm-auto">
@@ -41,10 +31,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
