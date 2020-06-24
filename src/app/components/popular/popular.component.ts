@@ -26,30 +26,6 @@ export class PopularComponent implements OnInit {
       });
   }
 
-  // onAddToFavourites(popular) {
-  //   this.movieIdNumber = popular.id;
-  //   this.movieTitle = popular.title;
-  //   const favMovie = {favMovieIdNumber: this.movieIdNumber, favMovieTitle: this.movieTitle};
-  //   this.favouriteMovieService.insertMovie(favMovie)
-  //     .subscribe((response: any) => {
-  //     this.movieIdNumber = '';
-  //     this.movieTitle = '';
-  //   });
-  // }
-
-  // onAddToFavourites(popular) {
-  //   console.log(popular.id);
-  //   console.log(popular.title);
-  //
-  //   const favMovie = {favMovieTitle: this.movieTitle};
-  //   this.favouriteMovieService.insertMovie(favMovie)
-  //     .subscribe((response: any) => {
-  //       // this.movieIdNumber = popular.id;
-  //       this.movieTitle = ' peter meiers movie';
-  //       // console.log(this.movieTitle);
-  //       console.log(this.movieTitle);
-  //     });
-  // }
 
   onAddToFavourites(popular) {
     console.log(popular.id);

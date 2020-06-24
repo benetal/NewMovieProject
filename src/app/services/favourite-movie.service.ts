@@ -17,4 +17,14 @@ export class FavouriteMovieService {
     return this.http.post(this.baseUrl + '/favouritList', Ifav);
   }
 
+  public getMovies(): Observable<Array<Ifavourite>> {
+    return this.http.get<Array<Ifavourite>>(this.baseUrl + '/favouritList/');
+  }
+
+  public deleteFavouritMovie (IFav: Ifavourite): Observable<any> {
+    const url = this.baseUrl + '/favouritList/' + IFav._id;
+    // const url = this.baseUrl + '/favouritList/' + IFav._id;
+    return this.http.delete(url);
+  }
+
 }

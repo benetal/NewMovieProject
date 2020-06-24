@@ -1,18 +1,9 @@
-<h1>favorites works</h1>
-
-<!--<div class="row">-->
-<!--  <div *ngIf="populars">-->
-<!--    <div *ngFor="let popular of populars">-->
-
-<!--      <h4 class="popular">{{popular.title}}</h4>-->
-<!--      <div class="image">-->
-
-
-<!--        <img src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}">-->
-
-<!--      </div>-->
-
-<!--      &lt;!&ndash; <h5>{{image.id}}</h5>&ndash;&gt;-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<div>
+  <ul id="favMovieListFromMongoDB">
+    <li *ngFor="let movie of favMovieListFromMongoDB, let i = index">
+      <h1>{{movie.favMovieTitle}}</h1>
+      <img src="http://image.tmdb.org/t/p/w500{{movie.favMoviePosterPath}}" style="max-height: 250px">
+      <button class="btn btn-dark" (click)="deleteFavouritMovie(i)">Delete</button>
+    </li>
+  </ul>
+</div>

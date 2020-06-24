@@ -1,29 +1,28 @@
-<div style="padding: 20px">
-  <div class="col-sm-auto">
-  <!--  <div>
-      <input type="text" [(ngModel)]="searchName">
-    </div>-->
+<body id="popularbody">
+<div class="container-fluid">
+  <div class="col-6">
     <div *ngIf="populars">
-      <div *ngFor="let popular of populars">
-        <div class="container" id="borderlineForPopular">
+      <div *ngFor="let popular of populars | filter: searchName">
+        <div class="container movieContainer" id="borderlineForPopular">
           <div class="row">
-            <div class="col-sm-auto">
+            <div class="col-auto">
               <div>
-                <img src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}" style="max-height: 250px">
+                <img src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}" style="max-height: 250px"
+                     class="rounded">
               </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-7 text-left">
               <h3>{{popular.title}}
               </h3>
-              <h4>Movie Description</h4>
-              <div style="font-size: small">{{popular.overview}}
-              </div>
+              <h6>{{popular.overview}}</h6>
             </div>
-            <div class="col-auto">
-              <button class="btn btn-info"
-                      (click)="onAddToFavourites(popular);">
-                Add to Favourites
-              </button>
+            <div class="col-auto align-text-bottom">
+              <div>
+                <button class="btn btn-info" id="addButton"
+                        (click)="onAddToFavourites(popular);">
+                  Add to Favourites
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -31,3 +30,4 @@
     </div>
   </div>
 </div>
+</body>

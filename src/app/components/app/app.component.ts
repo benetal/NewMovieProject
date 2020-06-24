@@ -11,19 +11,10 @@ export class AppComponent implements OnInit {
   // populars: Popular [] = [];
   title: string = 'NewMovieProject';
 
-
-
-  // constructor(private apiService: ApiService) {
-  // }
   constructor() {
   }
 
-
  ngOnInit(): void {
-  // return this.apiService.getPopularMovie()
-  //   .subscribe((data: Results)=> {
-  //     console.log(data)
-  //     this.populars= data.results;
-  //   });
+
   }
 }

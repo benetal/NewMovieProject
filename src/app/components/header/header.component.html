@@ -1,21 +1,26 @@
-<div class="container">
-  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-1">
-    <ul class="nav nav-tabs">
-      <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <a routerLink="/">Home/Popular</a>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a href="#" class="navbar-brand"> SWE Project</a>
+  <button class="navbar-toggler"></button>
+  <div>
+    <ul class="navbar-nav">
+
+      <li class=" mr-auto col-auto" routerLink="active" >
+        <a href="#" routerLink="/">HomePopular2</a>
       </li>
-      <li role="presentation" routerLinkActive="active">
-        <a routerLink="favourites">Favourites</a>
+      <li class="col-auto" routerLinkActive="active">
+        <a href="#" routerLink="favourites">Favourites</a>
       </li>
-      <li role="presentation" routerLinkActive="active">
-        <a routerLink="nowPlaying">Now Playing</a>
+      <li class="col-auto" routerLinkActive="active">
+        <a href="#"  routerLink="nowPlaying">Now Playing</a>
       </li>
-      <li role="presentation" routerLinkActive="active">
-        <a routerLink="/topRated">Top Rated</a>
+      <li class="col-auto" routerLinkActive="active">
+        <a href="#" routerLink="topRated" >Top Rated</a>
       </li>
       <li role="presentation" routerLinkActive="active">
         <a routerLink="/search">Search</a>
       </li>
     </ul>
   </div>
-</div>
+</nav>
+</body>

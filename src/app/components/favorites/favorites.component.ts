@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
+import {FavouriteMovieService} from '../../services/favourite-movie.service';
+import {Ifavourite} from '../../model/Ifavourite';
 
 
 @Component({
@@ -10,11 +12,28 @@ import {ApiService} from '../../services/api.service';
 export class FavoritesComponent implements OnInit {
 
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private favouriteMovieService: FavouriteMovieService) {
   }
+
+  @Input() favMovieListFromMongoDB: Array<Ifavourite> = [];
+
 
   ngOnInit() {
-
-
+    this.getFavMovieList();
   }
+
+  getFavMovieList() {
+    this.favouriteMovieService.getMovies()
+      .subscribe((data: Array<Ifavourite>) => {
+        this.favMovieListFromMongoDB = data;
+      });
+  }
+
+  deleteFavouritMovie(index: number): void {
+    this.favouriteMovieService.deleteFavouritMovie(this.favMovieListFromMongoDB[index])
+      .subscribe((response: any) => {
+        this.getFavMovieList();
+      });
+  }
+
 }
