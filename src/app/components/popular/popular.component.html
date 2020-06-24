@@ -1,10 +1,10 @@
 <div style="padding: 20px">
   <div class="col-sm-auto">
-    <div>
+  <!--  <div>
       <input type="text" [(ngModel)]="searchName">
-    </div>
+    </div>-->
     <div *ngIf="populars">
-      <div *ngFor="let popular of populars | filter: searchName">
+      <div *ngFor="let popular of populars">
         <div class="container" id="borderlineForPopular">
           <div class="row">
             <div class="col-sm-auto">

@@ -16,7 +16,7 @@ export class PopularComponent implements OnInit {
 
   movieIdNumber: string;
   movieTitle: string;
-  searchName: string="";
+  searchName: string;
 
   ngOnInit() {
     return this.apiService.getPopularMovieData()

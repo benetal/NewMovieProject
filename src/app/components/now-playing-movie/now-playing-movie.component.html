@@ -5,6 +5,11 @@
 <div>
   <input type="text" [(ngModel)]="searchName">
 </div>
+<div *ngFor="let movieGenre of movieGenres">
+  <div>{{movieGenre.id}}</div>
+</div>
+
+
 <div *ngIf="nowPlayingMovies">
   <div *ngFor="let nowPlayingMovie of nowPlayingMovies | filter: searchName">
     <div>{{nowPlayingMovie.title}}

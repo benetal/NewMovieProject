@@ -8,5 +8,4 @@ export interface Results {
   total_pages: number;
   results: [Popular];
 
-
 }

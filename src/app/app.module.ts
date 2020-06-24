@@ -12,6 +12,8 @@ import { TopRatedComponent } from './components/top-rated/top-rated.component';
 import {NowPlayingMovieComponent} from './components/now-playing-movie/now-playing-movie.component';
 import {FilterPipe} from './pipes/filter.pipe';
 import {FormsModule} from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -23,13 +25,15 @@ import {FormsModule} from '@angular/forms';
     PopularComponent,
     TopRatedComponent,
     NowPlayingMovieComponent,
-    FilterPipe
+    FilterPipe,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

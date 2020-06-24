@@ -9,7 +9,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   // populars: Popular [] = [];
-  // title: Function;
+  title: string = 'NewMovieProject';
 
 
 
@@ -25,5 +25,5 @@ export class AppComponent implements OnInit {
   //     console.log(data)
   //     this.populars= data.results;
   //   });
-}
+  }
 }
