@@ -1,9 +1,10 @@
 <body>
+<h1 id="textOnTop">Welcome to our fantastic Movie World Homepage! Here you have some of the most popular Movies at the time!</h1>
 <div class="container-fluid">
   <div class="row">
     <div *ngFor="let movie of populars | filter: searchName">
       <div class="container-fluid movieContainer">
-        <div class="row movieRow">
+        <div class="row">
           <div class="col-auto">
             <div class="align-content-between">
               <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"

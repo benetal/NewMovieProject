@@ -2,8 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {GetNowPlayingInterface} from '../../model/getNowPlayingInterface';
 import {GetNowPlaying} from '../../model/getNowPlaying';
-import {GetGenre} from "../../model/getGenre";
-import {NavigationEnd} from "@angular/router";
+import {GetGenre} from '../../model/getGenre';
+import {FavouriteMovieService} from '../../services/favourite-movie.service';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class NowPlayingMovieComponent implements OnInit {
   @Input() NowPlayingMovies: Array<GetNowPlaying>;
 
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private favouriteMovieService: FavouriteMovieService) {
   }
 
   ngOnInit() {
@@ -52,7 +52,7 @@ export class NowPlayingMovieComponent implements OnInit {
     console.log(this.nowPlayingMovies);
     this.NowPlayingMovies.forEach(function (movie)  {
       if(movie.genre_ids.includes(id)){
-        this.movieTemp.push(movie)
+        this.movieTemp.push(movie);
       }
 
     } .bind(this)
@@ -60,4 +60,12 @@ export class NowPlayingMovieComponent implements OnInit {
       this.nowPlayingMovies = this.movieTemp;
   }
 
+  onAddToFavourites(popular) {
+    console.log(popular.id);
+    console.log(popular.title);
+    const favMovie = {favMovieTitle: popular.title, favMovieIdNumber: popular.id, favMoviePosterPath: popular.poster_path};
+    this.favouriteMovieService.insertOne(favMovie)
+      .subscribe((response: any) => {
+      });
+  }
 }

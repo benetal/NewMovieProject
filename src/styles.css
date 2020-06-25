@@ -1,21 +1,7 @@
-/*@import "../node_modules/bootstrap/dist/css/bootstrap.css";*/
-/*body {*/
-/*  background-color: #32a4a8;*/
-/*}*/
-
-/*header {*/
-/*  font-size: large;*/
-/*  background-color: #325ba8;*/
-/*}*/
-
-/*.borderlineForPopular {*/
-
-/*  border: 1px solid rebeccapurple;*/
-/*  padding: 10px ;*/
-/*  margin: 10px;*/
-/*  display: inline-block;*/
-
-/*}*/
+#textOnTop {
+  color: lightgray;
+  width: 60%;
+}
 
 .footerStyle {
   /*position: absolute;*/
@@ -42,7 +28,7 @@ body {
   text-decoration-color: green;
   background-color: grey;
   max-width: 600px;
-  min-height: 360px;
+  min-height: 380px;
 
   border: 1px solid rebeccapurple;
   padding: 10px ;
@@ -51,21 +37,46 @@ body {
 
 }
 
-.containerForFav {
+.containerForFavouriteMovies {
   /*margin: 20px;*/
-  padding: 20px;
+  padding: 1px;
   /*margin-left: 10px;*/
 }
 
-.favMovieContainer {
-  margin: 10px;
+.containerForFavouritMovie {
+
+  text-decoration-color: green;
+  background-color: grey;
+  max-width: 300px;
+  min-height: 450px;
+  max-height: 600px;
+
+  border: 1px solid rebeccapurple;
+  padding: 1px ;
+  /*margin: 10px;*/
+  display: inline-block;
+
+  /*margin: 10px;*/
   /*padding: 10px;*/
   /*position: relative;*/
-  border: 1px solid rebeccapurple;
-  background-color: lightgray;
-  margin-left: 10px;
+  /*border: 1px solid rebeccapurple;*/
+  /*background-color: lightgray;*/
+  /*margin-left: 10px;*/
   /*height: fit-content;*/
 }
+
+
+#buttonGenre {
+  margin-left: 10px;
+  margin: 2px;
+  outline: lightgray;
+}
+
+#footerPosition {
+
+}
+
+
 
 #imageSize {
   height: 300px;

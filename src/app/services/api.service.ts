@@ -9,7 +9,7 @@ import {SearchComponent} from "../components/search/search.component";
 export class ApiService {
 
   apiKey: string = 'b1e86b5585ce562ad26b909dfeee3fcc';
-  pageLanguage: string = '&language=de-CH';
+  pageLanguage: string = '&language=en-US';
   pageNumber: string = '&page=1';
   searchQuery: string ='&query=';
   includeAdult: string = '&include_adult=false';
