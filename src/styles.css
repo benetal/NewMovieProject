@@ -1,4 +1,4 @@
-@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+/*@import "../node_modules/bootstrap/dist/css/bootstrap.css";*/
 /*body {*/
 /*  background-color: #32a4a8;*/
 /*}*/
@@ -8,7 +8,41 @@
 /*  background-color: #325ba8;*/
 /*}*/
 
-#borderlineForPopular {
+/*.borderlineForPopular {*/
+
+/*  border: 1px solid rebeccapurple;*/
+/*  padding: 10px ;*/
+/*  margin: 10px;*/
+/*  display: inline-block;*/
+
+/*}*/
+
+.footerStyle {
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  /*left: 25%;*/
+  width: 100%;
+  /*height: 50px;*/
+}
+
+
+body {
+  background-image: url("https://www.4kfilme.de/wp-content/uploads/2020/01/20th-century-fox-logo.jpg");
+  /*background-image: url("https://photojournal.jpl.nasa.gov/jpeg/PIA18033.jpg");*/
+  /*background-color: #cccccc;*/
+  /*background-repeat: repeat-y;*/
+  /*background-position: fixed;*/
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+.movieContainer {
+  /*margin: 10px;*/
+  /*padding: 10px;*/
+  text-decoration-color: green;
+  background-color: grey;
+  max-width: 600px;
+  min-height: 360px;
 
   border: 1px solid rebeccapurple;
   padding: 10px ;
@@ -17,28 +51,60 @@
 
 }
 
-
-body {
-  background-image: url("https://cdn.slashgear.com/wp-content/uploads/2020/04/star-wars-backgrounds-14.jpg");
-  background-color: #cccccc;
-  background-repeat: repeat-y;
-  /*background-position: fixed;*/
-  background-attachment: fixed;
+.containerForFav {
+  /*margin: 20px;*/
+  padding: 20px;
+  /*margin-left: 10px;*/
 }
 
-.movieContainer {
-  margin: auto;
-  text-decoration-color: green;
-  background-color: grey;
+.favMovieContainer {
+  margin: 10px;
+  /*padding: 10px;*/
+  /*position: relative;*/
+  border: 1px solid rebeccapurple;
+  background-color: lightgray;
+  margin-left: 10px;
+  /*height: fit-content;*/
 }
 
-.addButton {
-  padding: 10px;
-}
+#imageSize {
+  height: 300px;
 
-.some-grid-container {
-  grid-template-columns: auto;
-  grid-template-rows: auto;
 }
 
 
+
+
+
+
+/*.img-overlay {*/
+/*  position: absolute;*/
+/*  text-align: center;*/
+
+/*}*/
+
+/*.img-wrapper {*/
+/*  position: relative;*/
+
+/*}*/
+
+/*.img-responsive {*/
+/*  height: auto;*/
+/*}*/
+
+/*.btn {*/
+/*  position: absolute;*/
+/*  */
+/*}*/
+
+
+
+/*.flex {*/
+/*  display: flex;*/
+/*  flex-wrap: wrap;*/
+
+/*}*/
+
+/*.movieRow {*/
+/*  height: 300px;*/
+/*}*/

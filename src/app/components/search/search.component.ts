@@ -3,6 +3,9 @@ import {ApiService} from "../../services/api.service";
 import {HttpClient} from "@angular/common/http";
 import {GetNowPlaying} from "../../model/getNowPlaying";
 import {GetNowPlayingInterface} from "../../model/getNowPlayingInterface";
+import {FavouriteMovieService} from '../../services/favourite-movie.service';
+
+
 
 @Component({
   selector: 'app-search',
@@ -17,7 +20,7 @@ export class SearchComponent implements OnInit {
 
 
 
-  constructor(private apiService: ApiService, public http: HttpClient) {
+  constructor(private apiService: ApiService, public http: HttpClient, public favouriteMovieService: FavouriteMovieService) {
   }
 
 
@@ -32,5 +35,15 @@ export class SearchComponent implements OnInit {
         this.movies = data.results;
       });
   }
+
+  onAddToFavourites(popular) {
+    console.log(popular.id);
+    console.log(popular.title);
+    const favMovie = {favMovieTitle: popular.title, favMovieIdNumber: popular.id, favMoviePosterPath: popular.poster_path};
+    this.favouriteMovieService.insertOne(favMovie)
+      .subscribe((response: any) => {
+      });
+  }
+
 
 }

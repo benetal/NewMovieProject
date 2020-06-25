@@ -1,9 +1,97 @@
-<div>
-  <ul id="favMovieListFromMongoDB">
-    <li *ngFor="let movie of favMovieListFromMongoDB, let i = index">
-      <h1>{{movie.favMovieTitle}}</h1>
-      <img src="http://image.tmdb.org/t/p/w500{{movie.favMoviePosterPath}}" style="max-height: 250px">
-      <button class="btn btn-dark" (click)="deleteFavouritMovie(i)">Delete</button>
-    </li>
-  </ul>
+<body>
+<br>
+<h2>Here is your List of Movies you added to your Favourites</h2>
+<br>
+<div class="container containerForFav">
+  <div class="row">
+    <div *ngFor="let movie of favMovieListFromMongoDB, let i = index" style="padding: 10px">
+      <div class="container favMovieContainer">
+        <div class="row justify-content-center">
+          <br>
+          <h4>
+            {{movie.favMovieTitle}}
+          </h4>
+        </div>
+        <div class="row justify-content-center">
+          <img src="http://image.tmdb.org/t/p/w500{{movie.favMoviePosterPath}}"
+               class="rounded" style="height: 350px">
+        </div>
+<!--        <div class="row justify-content-center" style="padding: 40px">-->
+        <div class="row justify-content-center" style="margin: 50px">
+          <button class="btn btn-danger"
+                  (click)="deleteFavouritMovie(i);">
+            Delete from Favourites
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+</body>
+
+<!--<body>-->
+<!--<div class="container containerForFav">-->
+<!--  <div class="row">-->
+<!--    <div *ngFor="let movie of favMovieListFromMongoDB, let i = index">-->
+<!--      <div class="container-fluid" id="borderlineForPopular">-->
+<!--        <div class="row movieRow">-->
+<!--          <div class="row col-6 text-left">-->
+<!--            <h3>{{movie.favMovieTitle}}-->
+<!--            </h3>-->
+<!--          </div>-->
+<!--          <div class="row col-auto">-->
+<!--            <div class="align-items-stretch">-->
+<!--              &lt;!&ndash;                <img src="http://image.tmdb.org/t/p/w500{{popular.poster_path}}" style="max-height: 250px">&ndash;&gt;-->
+<!--              <img src="http://image.tmdb.org/t/p/w500{{movie.favMoviePosterPath}}"-->
+<!--                   class="rounded" style="height: 300px">-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-2 align-self-center">-->
+<!--            <div>-->
+<!--              <button class="btn btn-info" id="addButton"-->
+<!--                      (click)="deleteFavouritMovie(i);">-->
+<!--                Delete from Favourites-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</body>-->
+
+<!--<body id="popularbody">-->
+<!--<div class="container-fluid">-->
+<!--  <div class="col-6">-->
+<!--&lt;!&ndash;    <div *ngIf="populars">&ndash;&gt;-->
+<!--      <div *ngFor="let movie of favMovieListFromMongoDB, let i = index">-->
+<!--        <div class="container movieContainer" id="borderlineForPopular">-->
+<!--          <div class="row">-->
+<!--            <div class="col-auto">-->
+<!--              <div>-->
+<!--                <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" style="max-height: 250px"-->
+<!--                     class="rounded">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-7 text-left">-->
+<!--              <h3>{{movie.title}}-->
+<!--              </h3>-->
+<!--              <h6>{{movie.overview}}</h6>-->
+<!--            </div>-->
+<!--&lt;!&ndash;            <div class="col-auto align-text-bottom">&ndash;&gt;-->
+<!--&lt;!&ndash;              <div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <button class="btn btn-info" id="addButton"&ndash;&gt;-->
+<!--&lt;!&ndash;                        (click)="onAddToFavourites(popular);">&ndash;&gt;-->
+<!--&lt;!&ndash;                  Add to Favourites&ndash;&gt;-->
+<!--&lt;!&ndash;                </button>&ndash;&gt;-->
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</body>-->

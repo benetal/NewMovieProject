@@ -1,20 +1,29 @@
-<p>now-playing-movie works!</p>
-
 <body>
-<h1>Fuck you!</h1>
-<div>
-  <input type="text" [(ngModel)]="searchName">
-</div>
-<div *ngFor="let movieGenre of movieGenres">
-  <div>{{movieGenre.id}}</div>
-</div>
-
-
-<div *ngIf="nowPlayingMovies">
-  <div *ngFor="let nowPlayingMovie of nowPlayingMovies | filter: searchName">
-    <div>{{nowPlayingMovie.title}}
-      <div>
-        <img src="http://image.tmdb.org/t/p/w500{{nowPlayingMovie.poster_path}}">
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let movie of nowPlayingMovies | filter: searchName">
+      <div class="container-fluid movieContainer" id="borderlineForPopular">
+        <div class="row movieRow">
+          <div class="col-auto">
+            <div class="align-items-stretch">
+              <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
+                   class="rounded" id="imageSize">
+            </div>
+            <div class="col align-self-center">
+              <div>
+                <button class="btn btn-info"
+                        (click)="onAddToFavourites(movie);">
+                  Add to Favourites
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col text-left">
+            <h3>{{movie.title}}
+            </h3>
+            <h6>{{movie.overview}}</h6>
+          </div>
+        </div>
       </div>
     </div>
   </div>

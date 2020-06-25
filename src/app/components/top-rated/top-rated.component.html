@@ -1,16 +1,32 @@
 <body>
-<!--<h1>Fuck you too!</h1>-->
-<div *ngIf="topRated">
-  <div *ngFor="let top of topRated">
-
-
-    <div>{{top.title}}
-      <div>
-        <img src="http://image.tmdb.org/t/p/w500{{top.poster_path}}">
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let movie of topRated">
+      <div class="container-fluid movieContainer">
+        <div class="row movieRow">
+          <div class="col-auto">
+            <div class="align-content-between">
+              <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
+                   class="rounded" id="imageSize">
+            </div>
+            <div class="col align-self-center">
+              <div>
+                <button class="btn btn-info"
+                        (click)="onAddToFavourites(movie);">
+                  Add to Favourites
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col text-left">
+            <h3>{{movie.title}}
+            </h3>
+            <h6>{{movie.overview}}</h6>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
-
 </div>
 </body>
+
