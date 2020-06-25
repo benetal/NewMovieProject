@@ -60,6 +60,7 @@ export class NowPlayingMovieComponent implements OnInit {
       this.nowPlayingMovies = this.movieTemp;
   }
 
+
   onAddToFavourites(popular) {
     console.log(popular.id);
     console.log(popular.title);
