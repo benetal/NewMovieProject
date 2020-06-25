@@ -1,10 +1,15 @@
+
 <p>search works!</p>
+
 <div>
-<span>
-    <input placeholder="Nach einem Filmtitel suchen"
-           [(ngModel)]="searchMovieInput"/>
-  <button (click)="onClick()" class="btn btn-dark ml-1">Search</button>
-</span>
+
+  <div>
+    <input class="input-group-text" placeholder="Film suchen"
+              [(ngModel)]="searchMovieInput"/>
+
+    <button (click)="onClick()" class="btn btn-dark ml-1">Search</button>
+  </div>
+
 
   <div *ngFor="let searchMovie of movies">
     <div>{{searchMovie.title}}</div>
@@ -20,3 +25,4 @@
     <input text="this input" [(ngModel)]="searchMovieInput" >
   </app-search>-->
 </div>
+

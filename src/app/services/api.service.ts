@@ -9,7 +9,7 @@ import {SearchComponent} from "../components/search/search.component";
 export class ApiService {
 
   apiKey: string = 'b1e86b5585ce562ad26b909dfeee3fcc';
-  pageLanguage: string = '&language=en-US';
+  pageLanguage: string = '&language=de-CH';
   pageNumber: string = '&page=1';
   searchQuery: string ='&query=';
   includeAdult: string = '&include_adult=false';
@@ -45,4 +45,4 @@ export class ApiService {
 
 }
 
-// https://api.themoviedb.org/3/movie/latest?api_key=b1e86b5585ce562ad26b909dfeee3fcc&language=en-US
+// https://api.themoviedb.org/3/genre/movie/list?api_key=b1e86b5585ce562ad26b909dfeee3fcc&language=en-US

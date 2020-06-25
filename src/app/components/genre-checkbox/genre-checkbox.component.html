@@ -1,0 +1,7 @@
+<p>genre-checkbox works!</p>
+
+<div>
+  <div *ngFor="let genre of movieGenres;">
+          <button (click)="selectedGenreOnClick(genre.id)">{{genre.name}}</button>
+  </div>
+</div>
