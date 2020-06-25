@@ -16,15 +16,13 @@ export class PopularComponent implements OnInit {
 
   constructor(private apiService: ApiService, private favouriteMovieService: FavouriteMovieService) { }
 
-  movieIdNumber: string;
-  movieTitle: string;
-  moviePosterPath: string;
+
   searchName: string;
 
   ngOnInit() {
     return this.apiService.getPopularMovieData()
       .subscribe((data: GetNowPlayingInterface) => {
-        console.log(data)
+        console.log(data);
         this.populars = data.results;
       });
   }
@@ -33,14 +31,9 @@ export class PopularComponent implements OnInit {
   onAddToFavourites(popular) {
     console.log(popular.id);
     console.log(popular.title);
-
-    const favMovie = {favMovieTitle: this.movieTitle, favMovieIdNumber: this.movieIdNumber, favMoviePosterPath: this.moviePosterPath};
+    const favMovie = {favMovieTitle: popular.title, favMovieIdNumber: popular.id, favMoviePosterPath: popular.poster_path};
     this.favouriteMovieService.insertOne(favMovie)
       .subscribe((response: any) => {
-        // this.movieIdNumber = popular.id;
-        this.movieTitle = popular.title;
-        // console.log(this.movieTitle);
-        console.log(this.movieTitle);
       });
   }
 
