@@ -1,4 +1,4 @@
-export interface Popular {
+export interface Movie {
 
   popularity: number;
   vote_count: number;
@@ -9,8 +9,6 @@ export interface Popular {
   backdrop_path: string;
   original_language: string;
   original_title: string;
-
-
   genre_ids: [];
   title: string;
   vote_average: number;

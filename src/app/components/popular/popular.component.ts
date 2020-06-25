@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Results} from '../../model/results';
+import {MovieResults} from '../../model/movieResults';
 import {ApiService} from '../../services/api.service';
-import {Popular} from '../../model/popular';
+import {Movie} from '../../model/movie';
 import {FavouriteMovieService} from '../../services/favourite-movie.service';
-import {GetNowPlaying} from '../../model/getNowPlaying';
-import {GetNowPlayingInterface} from '../../model/getNowPlayingInterface';
+
 
 @Component({
   selector: 'app-popular',
@@ -12,7 +11,7 @@ import {GetNowPlayingInterface} from '../../model/getNowPlayingInterface';
   styleUrls: ['./popular.component.css']
 })
 export class PopularComponent implements OnInit {
-  populars: GetNowPlaying [] = [];
+  populars: Movie [] = [];
 
   constructor(private apiService: ApiService, private favouriteMovieService: FavouriteMovieService) { }
 
@@ -21,7 +20,7 @@ export class PopularComponent implements OnInit {
 
   ngOnInit() {
     return this.apiService.getPopularMovieData()
-      .subscribe((data: GetNowPlayingInterface) => {
+      .subscribe((data: MovieResults) => {
         console.log(data);
         this.populars = data.results;
       });

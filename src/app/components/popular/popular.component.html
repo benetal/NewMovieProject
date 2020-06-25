@@ -4,7 +4,7 @@
   <div class="row">
     <div *ngFor="let movie of populars | filter: searchName">
       <div class="container-fluid movieContainer">
-        <div class="row">
+        <div class="row movieRow">
           <div class="col-auto">
             <div class="align-content-between">
               <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"

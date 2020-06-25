@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {GetTopRated} from '../../model/getTopRated';
 import {ApiService} from '../../services/api.service';
-import {GetTopRatedInterface} from '../../model/getTopRatedInterface';
 import {FavouriteMovieService} from '../../services/favourite-movie.service';
+import {Movie} from "../../model/movie";
+import {MovieResults} from "../../model/movieResults";
 
 @Component({
   selector: 'app-top-rated',
@@ -10,13 +10,13 @@ import {FavouriteMovieService} from '../../services/favourite-movie.service';
   styleUrls: ['./top-rated.component.css']
 })
 export class TopRatedComponent implements OnInit {
-  topRated: GetTopRated [] = [];
+  topRated: Movie [] = [];
 
   constructor(private apiService: ApiService, private favouriteMovieService: FavouriteMovieService) { }
 
   ngOnInit() {
     return this.apiService.getTopRatedData()
-      .subscribe((data: GetTopRatedInterface) => {
+      .subscribe((data: MovieResults) => {
         // console.log(data);
         this.topRated  = data.results;
       });

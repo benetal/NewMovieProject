@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {GetNowPlaying} from "../model/getNowPlaying";
-import {GetGenre} from "../model/getGenre";
+
 
 @Pipe({
   name: 'genreFilter',

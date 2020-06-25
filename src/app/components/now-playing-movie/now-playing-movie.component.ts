@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
-import {GetNowPlayingInterface} from '../../model/getNowPlayingInterface';
-import {GetNowPlaying} from '../../model/getNowPlaying';
 import {GetGenre} from '../../model/getGenre';
 import {FavouriteMovieService} from '../../services/favourite-movie.service';
+import {Movie} from "../../model/movie";
+import {MovieResults} from "../../model/movieResults";
 
 
 @Component({
@@ -12,15 +12,15 @@ import {FavouriteMovieService} from '../../services/favourite-movie.service';
   styleUrls: ['./now-playing-movie.component.css']
 })
 export class NowPlayingMovieComponent implements OnInit {
-  nowPlayingMovies: GetNowPlaying[] = [];
+  nowPlayingMovies: Movie [] = [];
   searchName: string;
   posterPath: string = 'http://image.tmdb.org/t/p/w500';
   movieGenres: [{id:number, name: string}];
-  movieTemp: GetNowPlaying[] = [];
+  movieTemp: Movie [] = [];
 
 
 
-  @Input() NowPlayingMovies: Array<GetNowPlaying>;
+  @Input() NowPlayingMovies: Array<Movie>;
 
 
   constructor(private apiService: ApiService, private favouriteMovieService: FavouriteMovieService) {
@@ -30,7 +30,7 @@ export class NowPlayingMovieComponent implements OnInit {
 
     this.getMovieGenres();
     return this.apiService.getNowPlayingMovieData()
-      .subscribe((data: GetNowPlayingInterface) => {
+      .subscribe((data: MovieResults) => {
         console.log(data)
         this.nowPlayingMovies = data.results;
         this.NowPlayingMovies = data.results;
@@ -59,7 +59,6 @@ export class NowPlayingMovieComponent implements OnInit {
     );
       this.nowPlayingMovies = this.movieTemp;
   }
-
 
   onAddToFavourites(popular) {
     console.log(popular.id);

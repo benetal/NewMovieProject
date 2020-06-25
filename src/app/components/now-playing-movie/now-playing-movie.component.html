@@ -1,8 +1,8 @@
 <body>
 <br>
-  <div *ngFor="let genre of movieGenres;"  class="btn-group" role="group">
-    <button class="btn btn-dark" (click)="selectedGenreOnClick(genre.id)" id="buttonGenre">{{genre.name}}</button>
-  </div>
+<div *ngFor="let genre of movieGenres;"  class="btn-group" role="group">
+  <button class="btn btn-dark" (click)="selectedGenreOnClick(genre.id)" id="buttonGenre">{{genre.name}}</button>
+</div>
 <br>
 <br>
 <h1 id="textOnTop">Out now in Cinemas all over Switzerland</h1>
@@ -37,36 +37,3 @@
   </div>
 </div>
 </body>
-
-
-<!--<body>-->
-<!--<br>-->
-<!--<h2>Here is your List of Movies you added to your Favourites</h2>-->
-<!--<br>-->
-<!--<div class="container col containerForFavouriteMovies">-->
-<!--  <div class="row">-->
-<!--    <div *ngFor="let movie of nowPlayingMovies | filter: searchName">-->
-<!--      <div class="container-fluid containerForFavouritMovie">-->
-<!--        <div class="row justify-content-center">-->
-<!--          <br>-->
-<!--          <h4>-->
-<!--            {{movie.favMovieTitle}}-->
-<!--          </h4>-->
-<!--        </div>-->
-<!--        <div class="row justify-content-center">-->
-<!--          <img src="http://image.tmdb.org/t/p/w500{{movie.favMoviePosterPath}}"-->
-<!--               class="rounded" id="imageSize">-->
-<!--        </div>-->
-<!--        &lt;!&ndash;        <div class="row justify-content-center" style="padding: 40px">&ndash;&gt;-->
-<!--        <div class="row justify-content-center" style="margin: 50px">-->
-<!--          <button class="btn btn-danger"-->
-<!--                  (click)="deleteFavouritMovie(i);">-->
-<!--            Delete from Favourites-->
-<!--          </button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--</body>-->
-

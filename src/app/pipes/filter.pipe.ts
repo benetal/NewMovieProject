@@ -1,8 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {PopularComponent} from '../components/popular/popular.component';
-import {NowPlayingMovieComponent} from "../components/now-playing-movie/now-playing-movie.component";
-import {GetNowPlayingInterface} from "../model/getNowPlayingInterface";
-import {GetNowPlaying} from "../model/getNowPlaying";
+import {Movie} from "../model/movie";
+
 
 @Pipe({
   name: 'filter'
@@ -23,7 +21,7 @@ export class FilterPipe implements PipeTransform {
     return popularArray;
   }*/
 
-  transform(nowPlayingMovies: GetNowPlaying[], searchTerm: string): GetNowPlaying [] {
+  transform(nowPlayingMovies: Movie[], searchTerm: string): Movie [] {
     if (!nowPlayingMovies || !searchTerm) {
       return nowPlayingMovies;
     }

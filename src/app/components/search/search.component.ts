@@ -1,9 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, OnInit,} from '@angular/core';
 import {ApiService} from "../../services/api.service";
 import {HttpClient} from "@angular/common/http";
-import {GetNowPlaying} from "../../model/getNowPlaying";
-import {GetNowPlayingInterface} from "../../model/getNowPlayingInterface";
 import {FavouriteMovieService} from '../../services/favourite-movie.service';
+import {Movie} from "../../model/movie";
+import {MovieResults} from "../../model/movieResults";
 
 
 
@@ -14,7 +14,7 @@ import {FavouriteMovieService} from '../../services/favourite-movie.service';
 })
 export class SearchComponent implements OnInit {
 
-    movies: GetNowPlaying [] = [];
+    movies: Movie [] = [];
     moviePath: string = 'http://image.tmdb.org/t/p/w500/';
     searchMovieInput: string;
 
@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
 
   onClick(){
     this.apiService.getSearchData(this.searchMovieInput)
-      .subscribe((data: GetNowPlayingInterface) => {
+      .subscribe((data: MovieResults) => {
         console.log(data)
         this.movies = data.results;
       });
