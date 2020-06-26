@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {FavouriteMovieService} from '../../services/favourite-movie.service';
-import {Movie} from "../../model/movie";
-import {MovieResults} from "../../model/movieResults";
-import {GetGenre} from "../../model/getGenre";
+import {Movie} from '../../model/movie';
+import {MovieResults} from '../../model/movieResults';
+import {GetGenre} from '../../model/getGenre';
 
 @Component({
   selector: 'app-top-rated',
@@ -22,6 +22,7 @@ export class TopRatedComponent implements OnInit {
   constructor(private apiService: ApiService, private favouriteMovieService: FavouriteMovieService) { }
 
   ngOnInit() {
+    this.getMovieGenres();
     return this.apiService.getTopRatedData()
       .subscribe((data: MovieResults) => {
         // console.log(data);

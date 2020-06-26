@@ -23,7 +23,6 @@ export class FavouriteMovieService {
 
   public deleteFavouritMovie (IFav: Ifavourite): Observable<any> {
     const url = this.baseUrl + '/favouritList/' + IFav._id;
-    // const url = this.baseUrl + '/favouritList/' + IFav._id;
     return this.http.delete(url);
   }
 

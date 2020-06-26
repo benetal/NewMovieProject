@@ -5,7 +5,6 @@ import {FavoritesComponent} from './components/favorites/favorites.component';
 import {TopRatedComponent} from './components/top-rated/top-rated.component';
 import {NowPlayingMovieComponent} from './components/now-playing-movie/now-playing-movie.component';
 import {SearchComponent} from './components/search/search.component';
-import {GenreCheckboxComponent} from "./components/genre-checkbox/genre-checkbox.component";
 
 
 const routes: Routes = [
@@ -13,10 +12,8 @@ const routes: Routes = [
   {path: 'nowPlaying', component: NowPlayingMovieComponent},
   {path: 'favourites', component: FavoritesComponent},
   {path: 'topRated', component: TopRatedComponent},
-  {path: 'search', component: SearchComponent},
-  {path: 'checkBox', component: GenreCheckboxComponent}
+  {path: 'search', component: SearchComponent}
 
-  // {path: '', redirectTo: '/first-component' , pathMatch: 'full'}
 ];
 
 @NgModule({

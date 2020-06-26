@@ -1,4 +1,4 @@
-<body>
+<div id="searchBody">
 <br>
 <h2 id="textOnTop">Here is your List of Movies you added to your Favourites</h2>
 
@@ -7,8 +7,7 @@
   <div class="row">
     <div *ngFor="let movie of favMovieListFromMongoDB, let i = index" style="padding: 10px">
       <div class="container-fluid containerForFavouritMovie">
-        <div class="row justify-content-center">
-          <br>
+        <div class="row justify-content-center" style="margin: 3px">
           <h4>
             {{movie.favMovieTitle}}
           </h4>
@@ -18,7 +17,7 @@
                class="rounded" id="imageSize">
         </div>
 <!--        <div class="row justify-content-center" style="padding: 40px">-->
-        <div class="row justify-content-center" style="margin: 50px">
+        <div class="row justify-content-center" style="margin: 10px">
           <button class="btn btn-danger"
                   (click)="deleteFavouritMovie(i);">
             Delete from Favourites
@@ -28,7 +27,7 @@
     </div>
   </div>
 </div>
-</body>
+</div>
 
 
 

@@ -14,7 +14,7 @@ import {FilterPipe} from './pipes/filter.pipe';
 import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './components/search/search.component';
-import { GenreCheckboxComponent } from './components/genre-checkbox/genre-checkbox.component';
+
 
 
 @NgModule({
@@ -27,8 +27,7 @@ import { GenreCheckboxComponent } from './components/genre-checkbox/genre-checkb
     TopRatedComponent,
     NowPlayingMovieComponent,
     FilterPipe,
-    SearchComponent,
-    GenreCheckboxComponent
+    SearchComponent
   ],
   imports: [
     BrowserModule,

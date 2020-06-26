@@ -9,6 +9,7 @@ import {HttpClient} from '@angular/common/http';
 export class ApiService {
 
   apiKey: string = 'b1e86b5585ce562ad26b909dfeee3fcc';
+  region: '&region=CH';
   pageLanguage: string = '&language=en-US';
   pageNumber: string = '&page=1';
   searchQuery: string ='&query=';
@@ -28,7 +29,8 @@ export class ApiService {
   }
 
   getNowPlayingMovieData() {
-    return this.http.get(this.urlNowPlaying + this.apiKey + this.pageLanguage + this.pageNumber);
+    return this.http.get(this.urlNowPlaying + this.apiKey + this.pageLanguage + this.pageNumber + this.region);
+
   }
 
   getTopRatedData() {

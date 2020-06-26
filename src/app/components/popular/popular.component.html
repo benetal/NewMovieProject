@@ -4,13 +4,14 @@
 </div>
 <br>
 <div *ngFor="let genre of movieGenres"  class="btn-group" role="group">
-    <button class="btn btn-dark" (click)="selectedGenreOnClick(genre.id)" id="buttonGenre">{{genre.name}}</button>
+    <button class="btn btn-dark" style="margin: 2px" (click)="selectedGenreOnClick(genre.id)" id="buttonGenre">{{genre.name}}</button>
 </div>
 <br>
 <br>
 <h1 id="textOnTop">Welcome to our fantastic Movie World Homepage! Here you have some of the most popular Movies at the time!</h1>
 <div class="container-fluid">
   <div class="row">
+    <div *ngIf="nowPlayingMovies"></div>
     <div *ngFor="let movie of nowPlayingMovies | filter: searchName">
       <div class="container-fluid movieContainer">
         <div class="row movieRow">
@@ -19,7 +20,7 @@
               <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
                    class="rounded" id="imageSize">
             </div>
-            <div class="col align-self-center">
+            <div class="col align-self-center" style="margin: 10px">
               <div>
                 <button class="btn btn-info"
                         (click)="onAddToFavourites(movie);">

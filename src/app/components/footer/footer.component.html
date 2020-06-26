@@ -1,13 +1,8 @@
-<body class="page-footer">
-
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark footerStyle">
   <div>
-    <ul class="navbar-nav">
-      <li class=" mr-auto col-auto" routerLink="active">
-        <a href="#" routerLink="/">Home</a>
-      </li>
-      <li class="col-auto" routerLinkActive="active">
-        <a href="#" routerLink="favourites">Favourites</a>
+    <ul class="navbar-nav" style="margin-left: 20px">
+      <li class=" mr-auto col-auto">
+        <a href="#" routerLink="/">Popular</a>
       </li>
       <li class="col-auto" routerLinkActive="active">
         <a href="#" routerLink="nowPlaying">Now Playing</a>
@@ -16,10 +11,16 @@
         <a href="#" routerLink="topRated">Top Rated</a>
       </li>
       <li class="col-auto" routerLinkActive="active">
-        <a href="#" routerLink="checkBox">Chechbox</a>
+        <a href="#" routerLink="favourites">Favourites</a>
       </li>
-      <li>Created by Alan und David</li>
+      <li role="presentation" routerLinkActive="active">
+        <a routerLink="/search">Search</a>
+      </li>
+      <li>
+        <div style="margin-left: 10px">
+          Created by Alan und David
+        </div>
+      </li>
     </ul>
   </div>
 </nav>
-</body>

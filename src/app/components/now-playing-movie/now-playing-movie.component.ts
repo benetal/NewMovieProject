@@ -12,6 +12,7 @@ import {MovieResults} from '../../model/movieResults';
   styleUrls: ['./now-playing-movie.component.css']
 })
 export class NowPlayingMovieComponent implements OnInit {
+
   nowPlayingMovies: Movie [] = [];
   searchName: string;
   posterPath: string = 'http://image.tmdb.org/t/p/w500';
