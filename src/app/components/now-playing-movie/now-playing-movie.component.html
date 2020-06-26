@@ -1,6 +1,9 @@
-<body>
 <br>
-<div *ngFor="let genre of movieGenres;"  class="btn-group" role="group">
+<div>
+  <input type="text" placeholder="Search Now Playing" class="form-control col-2 my-0 py-1 amber-border min-width form-control-movie-world" [(ngModel)]="searchName">
+</div>
+<br>
+<div *ngFor="let genre of movieGenres"  class="btn-group" role="group">
   <button class="btn btn-dark" (click)="selectedGenreOnClick(genre.id)" id="buttonGenre">{{genre.name}}</button>
 </div>
 <br>
@@ -16,9 +19,9 @@
             <div class="align-content-between">
               <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
                    class="rounded" id="imageSize">
-            </div>
+                </div>
             <div class="col align-self-center">
-              <div>
+                <div>
                 <button class="btn btn-info"
                         (click)="onAddToFavourites(movie);">
                   Add to Favourites
@@ -36,4 +39,3 @@
     </div>
   </div>
 </div>
-</body>

@@ -1,10 +1,19 @@
-<body>
+<br>
+<div>
+  <input placeholder="Search Top Rated" type="text" class="form-control col-2 my-0 py-1 amber-border min-width form-control-movie-world" [(ngModel)]="searchName">
+</div>
+<br>
+<div *ngFor="let genre of movieGenres;"  class="btn-group" role="group">
+  <button class="btn btn-dark" (click)="selectedGenreOnClick(genre.id)" id="buttonGenre">{{genre.name}}</button>
+</div>
+<br>
+<br>
 <br>
 <h1 id="textOnTop">Top Rated List</h1>
 
 <div class="container-fluid">
   <div class="row">
-    <div *ngFor="let movie of topRated">
+    <div *ngFor="let movie of nowPlayingMovies | filter: searchName">
       <div class="container-fluid movieContainer">
         <div class="row movieRow">
           <div class="col-auto">
@@ -31,4 +40,3 @@
     </div>
   </div>
 </div>
-</body>

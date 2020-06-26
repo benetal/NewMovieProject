@@ -1,9 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {GetGenre} from '../../model/getGenre';
 import {FavouriteMovieService} from '../../services/favourite-movie.service';
-import {Movie} from "../../model/movie";
-import {MovieResults} from "../../model/movieResults";
+import {Movie} from '../../model/movie';
+import {MovieResults} from '../../model/movieResults';
 
 
 @Component({
@@ -18,9 +18,7 @@ export class NowPlayingMovieComponent implements OnInit {
   movieGenres: [{id:number, name: string}];
   movieTemp: Movie [] = [];
 
-
-
-  @Input() NowPlayingMovies: Array<Movie>;
+  NowPlayingMovies: Array<Movie>;
 
 
   constructor(private apiService: ApiService, private favouriteMovieService: FavouriteMovieService) {
@@ -36,8 +34,8 @@ export class NowPlayingMovieComponent implements OnInit {
         this.NowPlayingMovies = data.results;
       });
 
-
   }
+
 
   getMovieGenres() {
     this.apiService.getMovieGenre()
@@ -51,13 +49,13 @@ export class NowPlayingMovieComponent implements OnInit {
   selectedGenreOnClick(id: number) {
     console.log(this.nowPlayingMovies);
     this.NowPlayingMovies.forEach(function (movie)  {
-      if(movie.genre_ids.includes(id)){
-        this.movieTemp.push(movie);
-      }
+        if(movie.genre_ids.includes(id)){
+          this.movieTemp.push(movie);
+        }
 
-    } .bind(this)
+      } .bind(this)
     );
-      this.nowPlayingMovies = this.movieTemp;
+    this.nowPlayingMovies = this.movieTemp;
   }
 
   onAddToFavourites(popular) {
@@ -68,4 +66,5 @@ export class NowPlayingMovieComponent implements OnInit {
       .subscribe((response: any) => {
       });
   }
+
 }

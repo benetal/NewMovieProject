@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MovieResults} from '../../model/movieResults';
 import {ApiService} from '../../services/api.service';
 import {Movie} from '../../model/movie';
 import {FavouriteMovieService} from '../../services/favourite-movie.service';
+import {GetGenre} from '../../model/getGenre';
 
 
 @Component({
@@ -11,19 +12,48 @@ import {FavouriteMovieService} from '../../services/favourite-movie.service';
   styleUrls: ['./popular.component.css']
 })
 export class PopularComponent implements OnInit {
-  populars: Movie [] = [];
+  nowPlayingMovies: Movie [] = [];
+  searchName: string;
+  posterPath: string = 'http://image.tmdb.org/t/p/w500';
+  movieGenres: [{id:number, name: string}];
+  movieTemp: Movie [] = [];
+
+  NowPlayingMovies: Array<Movie>;
+
 
   constructor(private apiService: ApiService, private favouriteMovieService: FavouriteMovieService) { }
 
 
-  searchName: string;
 
   ngOnInit() {
     return this.apiService.getPopularMovieData()
       .subscribe((data: MovieResults) => {
         console.log(data);
-        this.populars = data.results;
+        this.nowPlayingMovies = data.results;
+        this.NowPlayingMovies = data.results;
       });
+
+  }
+
+  getMovieGenres() {
+    this.apiService.getMovieGenre()
+      .subscribe((data: GetGenre) => {
+        console.log(data)
+        this.movieGenres = data.genres;
+      });
+  }
+
+
+  selectedGenreOnClick(id: number) {
+    console.log(this.nowPlayingMovies);
+    this.NowPlayingMovies.forEach(function (movie)  {
+        if(movie.genre_ids.includes(id)){
+          this.movieTemp.push(movie);
+        }
+
+      } .bind(this)
+    );
+    this.nowPlayingMovies = this.movieTemp;
   }
 
 
@@ -35,5 +65,7 @@ export class PopularComponent implements OnInit {
       .subscribe((response: any) => {
       });
   }
+
+
 
 }

@@ -1,15 +1,15 @@
 <body>
-<br>
+
 <span>
-  <div class="row">
-    <input class="form-control col-2 my-0 py-1 amber-border min-width form-control-movie-world" placeholder="Nach einem Filmtitel suchen"
+  <div class="row" style="margin: 20px">
+    <input class="form-control col-2 my-0 py-1 amber-border min-width form-control-movie-world" placeholder="Search Movie"
               [(ngModel)]="searchMovieInput"/>
   <button (click)="onClick()" class="btn btn-dark ml-1">Search</button>
   </div>
 
 </span>
 <div class="container-fluid">
-  <br>
+
   <div class="row">
     <div *ngFor="let movie of movies">
       <div class="container-fluid movieContainer">
