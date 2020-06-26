@@ -1,27 +1,23 @@
-<br>
-<div>
-  <input placeholder="Search Top Rated" type="text" class="form-control col-2 my-0 py-1 amber-border min-width form-control-movie-world" [(ngModel)]="searchName">
-</div>
-<br>
-<div *ngFor="let genre of movieGenres;"  class="btn-group" role="group">
-  <button class="btn btn-dark" style="margin: 2px" (click)="selectedGenreOnClick(genre.id)" id="buttonGenre">{{genre.name}}</button>
-</div>
-<br>
-<br>
-<br>
-<h1 id="textOnTop">Top Rated List</h1>
-
+<h1 id="textOnTop">Here you can Search individually Movies!</h1>
+<div id="searchBody">
+<span>
+  <div class="row" style="margin: 20px">
+    <input class="form-control col-2 my-0 py-1 amber-border min-width form-control-movie-world" placeholder="Search Movie"
+              [(ngModel)]="searchMovieInput"/>
+  <button (click)="onClick()" class="btn btn-dark ml-1">Search</button>
+  </div>
+</span>
 <div class="container-fluid">
   <div class="row">
-    <div *ngFor="let movie of nowPlayingMovies | filter: searchName">
+    <div *ngFor="let movie of movies">
       <div class="container-fluid movieContainer">
         <div class="row movieRow">
           <div class="col-auto">
             <div class="align-content-between">
-              <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
+              <img src="{{this.moviePath}}{{movie.poster_path}}"
                    class="rounded" id="imageSize">
             </div>
-            <div class="col align-self-center" style="margin: 10px">
+            <div class="col align-self-center">
               <div>
                 <button class="btn btn-info"
                         (click)="onAddToFavourites(movie);">
@@ -39,4 +35,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

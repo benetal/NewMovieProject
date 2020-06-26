@@ -1,4 +1,4 @@
-export interface Ifavourite {
+export interface Favourite {
   _id?: string;
   favMovieIdNumber: string;
   favMovieTitle: string;

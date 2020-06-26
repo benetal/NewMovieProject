@@ -1,11 +1,10 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {Movie} from "../model/movie";
-
+import { Pipe, PipeTransform } from '@angular/core';
+import {Movie} from "../model/Movie";
 
 @Pipe({
-  name: 'filter'
+  name: 'titleFilter'
 })
-export class FilterPipe implements PipeTransform {
+export class TitleFilterPipe implements PipeTransform {
 
   transform(nowPlayingMovies: Movie[], searchTerm: string): Movie [] {
     if (!nowPlayingMovies || !searchTerm) {

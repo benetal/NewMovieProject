@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchComponent } from './search.component';
-import {ApiService} from "../../services/api.service";
+import {ApiService} from "../../../services/api.service";
 
 describe('SearchComponent', () => {
   let httpClientSpy: { get: jasmine.Spy };

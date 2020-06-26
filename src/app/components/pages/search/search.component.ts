@@ -1,9 +1,9 @@
 import {Component, OnInit,} from '@angular/core';
-import {ApiService} from "../../services/api.service";
+import {ApiService} from "../../../services/api.service";
 import {HttpClient} from "@angular/common/http";
-import {FavouriteMovieService} from '../../services/favourite-movie.service';
-import {Movie} from "../../model/movie";
-import {MovieResults} from "../../model/movieResults";
+import {FavouriteMovieService} from '../../../services/favourite-movie.service';
+import {Movie} from "../../../model/Movie";
+import {MovieResults} from "../../../model/MovieResults";
 
 
 

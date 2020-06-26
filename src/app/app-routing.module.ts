@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PopularComponent} from './components/popular/popular.component';
-import {FavoritesComponent} from './components/favorites/favorites.component';
-import {TopRatedComponent} from './components/top-rated/top-rated.component';
-import {NowPlayingMovieComponent} from './components/now-playing-movie/now-playing-movie.component';
-import {SearchComponent} from './components/search/search.component';
+import {PopularComponent} from './components/pages/popular/popular.component';
+import {FavoritesComponent} from './components/pages/favorites/favorites.component';
+import {TopRatedComponent} from './components/pages/top-rated/top-rated.component';
+import {NowPlayingMovieComponent} from './components/pages/now-playing-movie/now-playing-movie.component';
+import {SearchComponent} from './components/pages/search/search.component';
 
 
 const routes: Routes = [

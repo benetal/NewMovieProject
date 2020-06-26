@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {MovieResults} from '../../model/movieResults';
-import {ApiService} from '../../services/api.service';
-import {Movie} from '../../model/movie';
-import {FavouriteMovieService} from '../../services/favourite-movie.service';
-import {GetGenre} from '../../model/getGenre';
+import {MovieResults} from '../../../model/MovieResults';
+import {ApiService} from '../../../services/api.service';
+import {Movie} from '../../../model/Movie';
+import {FavouriteMovieService} from '../../../services/favourite-movie.service';
+import {Genre} from '../../../model/Genre';
 
 
 @Component({
@@ -38,7 +38,7 @@ export class PopularComponent implements OnInit {
 
   getMovieGenres() {
     this.apiService.getMovieGenre()
-      .subscribe((data: GetGenre) => {
+      .subscribe((data: Genre) => {
         console.log(data)
         this.movieGenres = data.genres;
       });

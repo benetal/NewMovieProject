@@ -1,7 +1,5 @@
 <div id="searchBody">
-<br>
-<h2 id="textOnTop">Here is your List of Movies you added to your Favourites</h2>
-
+<h1 id="textOnTop">Here is your List of Movies you added to your Favourites!</h1>
 <br>
 <div class="container col containerForFavouriteMovies">
   <div class="row">
@@ -16,10 +14,9 @@
           <img src="http://image.tmdb.org/t/p/w500{{movie.favMoviePosterPath}}"
                class="rounded" id="imageSize">
         </div>
-<!--        <div class="row justify-content-center" style="padding: 40px">-->
         <div class="row justify-content-center" style="margin: 10px">
           <button class="btn btn-danger"
-                  (click)="deleteFavouritMovie(i);">
+                  (click)="deleteFavouriteMovie(i);">
             Delete from Favourites
           </button>
         </div>
