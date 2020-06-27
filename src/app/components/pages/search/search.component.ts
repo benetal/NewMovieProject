@@ -28,13 +28,15 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick(){
+
+  searchOnClick(){
     this.apiService.getSearchData(this.searchMovieInput)
       .subscribe((data: MovieResults) => {
         console.log(data)
         this.movies = data.results;
       });
   }
+
 
   onAddToFavourites(popular) {
     console.log(popular.id);

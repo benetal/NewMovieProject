@@ -19,20 +19,22 @@ export class FavoritesComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getFavMovieList();
+    this.getFavouriteMovieList();
   }
 
-  getFavMovieList() {
-    this.favouriteMovieService.getMovies()
+
+  getFavouriteMovieList() {
+    this.favouriteMovieService.getFavouriteMovies()
       .subscribe((data: Array<Favourite>) => {
         this.favMovieListFromMongoDB = data;
       });
   }
 
+
   deleteFavouriteMovie(index: number): void {
     this.favouriteMovieService.deleteFavouriteMovie(this.favMovieListFromMongoDB[index])
       .subscribe((response: any) => {
-        this.getFavMovieList();
+        this.getFavouriteMovieList();
       });
   }
 

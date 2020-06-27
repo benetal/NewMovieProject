@@ -4,7 +4,7 @@
   <div class="row" style="margin: 20px">
     <input class="form-control col-2 my-0 py-1 amber-border min-width form-control-movie-world" placeholder="Search Movie"
               [(ngModel)]="searchMovieInput"/>
-  <button (click)="onClick()" class="btn btn-dark ml-1">Search</button>
+  <button (click)="searchOnClick()" class="btn btn-dark ml-1">Search</button>
   </div>
 </span>
 <div class="container-fluid">
@@ -15,7 +15,7 @@
           <div class="col-auto">
             <div class="align-content-between">
               <img src="{{this.moviePath}}{{movie.poster_path}}"
-                   class="rounded" id="imageSize">
+                   class="rounded" id="imageSize" style="margin: 10px">
             </div>
             <div class="col align-self-center">
               <div>

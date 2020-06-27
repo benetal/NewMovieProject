@@ -6,6 +6,7 @@ import {Movie} from "../model/Movie";
 })
 export class TitleFilterPipe implements PipeTransform {
 
+  // filters the titles with the input tag in the component
   transform(nowPlayingMovies: Movie[], searchTerm: string): Movie [] {
     if (!nowPlayingMovies || !searchTerm) {
       return nowPlayingMovies;

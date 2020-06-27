@@ -27,26 +27,26 @@ export class PopularComponent implements OnInit {
 
   ngOnInit() {
     this.getMovieGenres();
+
+
     return this.apiService.getPopularMovieData()
       .subscribe((data: MovieResults) => {
-        console.log(data);
         this.nowPlayingMovies = data.results;
         this.NowPlayingMovies = data.results;
       });
 
   }
 
+
   getMovieGenres() {
-    this.apiService.getMovieGenre()
+    this.apiService.getMovieGenreData()
       .subscribe((data: Genre) => {
-        console.log(data)
         this.movieGenres = data.genres;
       });
   }
 
 
   selectedGenreOnClick(id: number) {
-    console.log(this.nowPlayingMovies);
     this.NowPlayingMovies.forEach(function (movie)  {
         if(movie.genre_ids.includes(id)){
           this.movieTemp.push(movie);
@@ -59,8 +59,6 @@ export class PopularComponent implements OnInit {
 
 
   onAddToFavourites(popular) {
-    console.log(popular.id);
-    console.log(popular.title);
     const favMovie = {favMovieTitle: popular.title, favMovieIdNumber: popular.id, favMoviePosterPath: popular.poster_path};
     this.favouriteMovieService.insertOne(favMovie)
       .subscribe((response: any) => {

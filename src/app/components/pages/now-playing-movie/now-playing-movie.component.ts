@@ -25,6 +25,7 @@ export class NowPlayingMovieComponent implements OnInit {
   constructor(private apiService: ApiService, private favouriteMovieService: FavouriteMovieService) {
   }
 
+
   ngOnInit() {
 
     this.getMovieGenres();
@@ -39,16 +40,14 @@ export class NowPlayingMovieComponent implements OnInit {
 
 
   getMovieGenres() {
-    this.apiService.getMovieGenre()
+    this.apiService.getMovieGenreData()
       .subscribe((data: Genre) => {
-        console.log(data)
         this.movieGenres = data.genres;
       });
   }
 
 
   selectedGenreOnClick(id: number) {
-    console.log(this.nowPlayingMovies);
     this.NowPlayingMovies.forEach(function (movie)  {
         if(movie.genre_ids.includes(id)){
           this.movieTemp.push(movie);
@@ -59,9 +58,8 @@ export class NowPlayingMovieComponent implements OnInit {
     this.nowPlayingMovies = this.movieTemp;
   }
 
+
   onAddToFavourites(popular) {
-    console.log(popular.id);
-    console.log(popular.title);
     const favMovie = {favMovieTitle: popular.title, favMovieIdNumber: popular.id, favMoviePosterPath: popular.poster_path};
     this.favouriteMovieService.insertOne(favMovie)
       .subscribe((response: any) => {

@@ -13,14 +13,17 @@ export class FavouriteMovieService {
   private baseUrl = 'http://localhost:3000';
 
 
-  public insertOne(Ifav: Favourite): Observable<any> {
-    return this.http.post(this.baseUrl + '/favouritList', Ifav);
+  //adds a Movie into monoDB
+  public insertOne(IFav: Favourite): Observable<any> {
+    return this.http.post(this.baseUrl + '/favouritList', IFav);
   }
 
-  public getMovies(): Observable<Array<Favourite>> {
+  //gets Favourite Movies from mongodb for FavouritesComponent
+  public getFavouriteMovies(): Observable<Array<Favourite>> {
     return this.http.get<Array<Favourite>>(this.baseUrl + '/favouritList/');
   }
 
+  //deletes selected Movie from mongoDB
   public deleteFavouriteMovie (IFav: Favourite): Observable<any> {
     const url = this.baseUrl + '/favouritList/' + IFav._id;
     return this.http.delete(url);

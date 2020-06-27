@@ -1,4 +1,4 @@
-import {Injectable, Input} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 
@@ -37,7 +37,7 @@ export class ApiService {
     return this.http.get(this.urlTopRated + this.apiKey + this.pageLanguage + this.pageNumber);
   }
 
-  getMovieGenre() {
+  getMovieGenreData() {
     return this.http.get(this.urlMovieGenre + this.apiKey + this.pageLanguage + this.pageNumber);
   }
 
@@ -47,4 +47,3 @@ export class ApiService {
 
 }
 
-// https://api.themoviedb.org/3/genre/movie/list?api_key=b1e86b5585ce562ad26b909dfeee3fcc&language=en-US

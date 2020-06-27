@@ -1,16 +1,23 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { SearchComponent } from './search.component';
-import {ApiService} from "../../../services/api.service";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('SearchComponent', () => {
-  let httpClientSpy: { get: jasmine.Spy };
-  let apiService: ApiService;
-  beforeEach(() => {
-    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-    apiService = new ApiService(<any>httpClientSpy);
-  });
+
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [HttpClientTestingModule],
+    providers: [SearchComponent]
+  }));
+
   it('should be created', () => {
-    expect(apiService).toBeTruthy();
+    const component: SearchComponent = TestBed.get(SearchComponent);
+    expect(component).toBeTruthy();
   });
+
+  it('should have get movies', () => {
+    const component: SearchComponent = TestBed.get(SearchComponent);
+    expect(component.movies).toBeTruthy();
+  });
+
 });

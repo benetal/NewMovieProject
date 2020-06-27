@@ -1,25 +1,23 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { FavoritesComponent } from './favorites.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('FavoritesComponent', () => {
-  let component: FavoritesComponent;
-  let fixture: ComponentFixture<FavoritesComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ FavoritesComponent ]
-    })
-    .compileComponents();
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [HttpClientTestingModule],
+    providers: [FavoritesComponent]
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(FavoritesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  it('should be created', () => {
+    const service: FavoritesComponent = TestBed.get(FavoritesComponent);
+    expect(service).toBeTruthy();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have getData function', () => {
+    const service: FavoritesComponent = TestBed.get(FavoritesComponent);
+    expect(service.getFavouriteMovieList).toBeTruthy();
   });
+
 });

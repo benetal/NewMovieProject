@@ -38,8 +38,6 @@ body {
 }
 
 #buttonGenre {
-  margin-left: 10px;
-  margin: 2px;
   outline: lightgray;
 }
 #footerPosition {
@@ -52,6 +50,11 @@ body {
 #searchBody {
   min-height: 800px;
   height: max-content;
+}
+
+#h5 {
+  position: absolute;
+  bottom: 0px;
 }
 
 
